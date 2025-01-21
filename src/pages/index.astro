@@ -1,0 +1,167 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import AboutCard from '~/components/widgets/AboutCard.astro';
+
+const metadata = {
+  title: 'Rojisa',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Catalogo',
+        href: 'https://drive.google.com/file/d/1E55taz8T8CLdF57hQGKwu-WdSZre5k_U/view?usp=DRIVESDK',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Sucursales', href: '#sucursales' },
+    ]}
+    image={{ src: '~/assets/images/toyama.png', alt: 'Aberlin imagen' }}
+  >
+    <Fragment slot="title">
+      ¡Permítenos ser tu aliado<span class=""> en cada proyecto!</span>
+      <span class="text-primary dark:text-secondary"></span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">En Rojisa</span>, no solo cuidamos tus equipos,</span>
+        cuidamos tu confianza. 
+    </Fragment>
+  </Hero>
+
+  <Features
+    id="services"
+    tagline="Servicios"
+    title="Nuestros servicios"
+    subtitle=""
+    items={[
+      {
+        title: 'Venta de Equipos y Refacciones',
+        description:
+          'En Motores y Equipos Rojisa te ofrecemos lo mejor para tus proyectos forestales, agrícolas y de jardinería. Contamos con una amplia selección de equipos de marcas líderes y refacciones 100% originales que garantizan el máximo desempeño y durabilidad de tus herramientas. ¡Encuentra todo lo que necesitas en un solo lugar, con calidad y confianza!',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'Mantenimiento Preventivo y Correctivo',
+        description:
+          'Mantén tus equipos siempre al máximo con nuestro Taller Mecánico Especializado. Ofrecemos mantenimiento preventivo y correctivo con atención profesional y personalizada. Nuestro equipo de expertos se encarga de optimizar el funcionamiento de tu maquinaria, prolongando su vida útil y asegurando que esté lista para cualquier desafío. ¡Confía en nosotros para proteger tu inversión!',
+        icon: 'tabler:tool',
+      },
+    ]}
+  />
+
+  <!-- Steps Widget ****************** -->
+  <div class="grid mx-auto gap-8 md:gap-y-12 sm:grid-cols-1 px-4 md:px-6 max-w-5xl">
+    <Steps
+      id="sucursales"
+      title="Ubicación de nuestras sucursales"
+      items={[
+        {
+          title: 'San Cristóbal de las Casas',
+          description: 'Periférico Norte Pte. #11 Barrio Sta María.',
+          icon: 'ic:twotone-whatsapp',
+          classes: { icon: 'text-whatsapp border-whatsapp dark:text-whatsapp dark:border-whatsapp' },
+          telefonos: {
+            whatsapp: '9671591917',
+            telefono: '9676880237',
+            ubicacion: 'https://maps.app.goo.gl/V1AALSHMFNKYJ6YN7',
+          },
+        },
+        {
+          title: 'Tuxtla Gutiérrez',
+          description: '4a. Ote. Sur con Esq. 10a. Sur #1098 Carretera Villaflores. Col. Centro.',
+          icon: 'ic:twotone-whatsapp',
+          classes: { icon: 'text-whatsapp border-whatsapp dark:text-whatsapp dark:border-whatsapp' },
+          telefonos: {
+            whatsapp: '9613731781',
+            telefono: '9616002009',
+            ubicacion: 'https://maps.app.goo.gl/MF9H1CFZIEKNHQG79',
+          },
+        },
+        {
+          title: 'Tapachula',
+          description: 'Av. Central Nte. 99B, entre 13 y 15 Ote. Col Centro C.P: 30700.',
+          icon: 'ic:twotone-whatsapp',
+          classes: { icon: 'text-whatsapp border-whatsapp dark:text-whatsapp dark:border-whatsapp' },
+          telefonos: {
+            whatsapp: '9625189780',
+            telefono: '9626427650',
+            ubicacion: 'https://maps.app.goo.gl/QZSY5G88S4TWEFYG8',
+          },
+        },
+      ]}
+    />
+  </div>
+
+  <AboutCard tagline="Quienes somos" id="about">
+    <Fragment slot="title">
+      ¡Permítenos ser tu aliado en cada proyecto!<br />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      En <span class="font-semibold">Rojisa</span> 
+      Somos una empresa líder chiapaneca en el sureste mexicano, nuestra pasión es impulsar tu productividad con soluciones 
+      confiables y de calidad. Desde nuestros inicios, nos hemos dedicado a ser la opción <span class="text-primary dark:text-secondary">líder en el sureste mexicano</span>, 
+      especializándonos en la venta de refacciones y el mantenimiento de equipos forestales, agrícolas y de jardinería.
+      <br />
+      <br />
+      En Rojisa, no solo cuidamos tus equipos, cuidamos tu confianza. <span class="text-primary dark:text-secondary">¡Permítenos ser tu aliado en cada proyecto!</span>
+
+    </Fragment>
+
+    <Fragment slot="steps">
+      <Steps2
+        title=""
+        subtitle=""
+        items={[
+          {
+            title: 'Visión',
+            description:
+              'Ser la mejor empresa del sureste mexicano con la mejor atención y servicio en el sector forestal, agrícola y jardinería, ofreciendo solo productos de las mas alta calidad con los mejores precios del mercado a todos nuestros clientes.',
+          },
+          {
+            title: 'Misión',
+            description:
+              'Proporcionar a nuestros clientes las herramientas necesarias con los más altos estándares de calidad para lograr un mejor desempeño y productividad en su trabajo diario, cubriendo sus expectativas en el giroforestal, agrícola y jardinería.',
+          },
+        ]}
+      />
+    </Fragment>
+  </AboutCard>
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Catalogo',
+        href: 'https://drive.google.com/file/d/1E55taz8T8CLdF57hQGKwu-WdSZre5k_U/view?usp=DRIVESDK',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="sm:whitespace-nowrap">¡En Rojisa</span> encuentra lo que necesitas! <br class="block sm:hidden" />
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Descarga nuestro catálogo y descubre las mejores herramientas para tu trabajo.
+    </Fragment>
+  </CallToAction>
+</Layout>
