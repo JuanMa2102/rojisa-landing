@@ -8,6 +8,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import AboutCard from '~/components/widgets/AboutCard.astro';
+import Stats2 from '~/components/widgets/Stats2.astro';
+import Catalog from '~/components/widgets/Catalog.astro';
 
 const metadata = {
   title: 'Rojisa',
@@ -23,13 +25,13 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Catalogo',
-        href: 'https://drive.google.com/file/d/1E55taz8T8CLdF57hQGKwu-WdSZre5k_U/view?usp=DRIVESDK',
+        href: 'catalogo_rojisa.pdf',
         target: '_blank',
         icon: 'tabler:download',
       },
       { text: 'Sucursales', href: '#sucursales' },
     ]}
-    image={{ src: '~/assets/images/toyama.png', alt: 'Aberlin imagen' }}
+    image={{ src: '~/assets/images/motocierra-husqsvarna.png', alt: 'Motocierra Husqsvarna' }}
   >
     <Fragment slot="title">
       ¡Permítenos ser tu aliado<span class=""> en cada proyecto!</span>
@@ -44,8 +46,10 @@ const metadata = {
   </Hero>
 
   <Features
+    backgroundColor="bg-primary text-white"
+    classes={{ headline: 'text-dark' }}
     id="services"
-    tagline="Servicios"
+    tagline=""
     title="Nuestros servicios"
     subtitle=""
     items={[
@@ -61,6 +65,19 @@ const metadata = {
           'Mantén tus equipos siempre al máximo con nuestro Taller Mecánico Especializado. Ofrecemos mantenimiento preventivo y correctivo con atención profesional y personalizada. Nuestro equipo de expertos se encarga de optimizar el funcionamiento de tu maquinaria, prolongando su vida útil y asegurando que esté lista para cualquier desafío. ¡Confía en nosotros para proteger tu inversión!',
         icon: 'tabler:tool',
       },
+    ]}
+  />
+
+  <Catalog
+    stats={[
+      { image: '~/assets/images/catalogos/accesorios.jpg', title: 'ACCESORIOS'},
+      { image: '~/assets/images/catalogos/aceites.jpg', title: 'ACEITES Y LUBRICANTES'},
+      { image: '~/assets/images/catalogos/zyro-image_2.png', title: 'CONSUMIBLES'},
+      { image: '~/assets/images/catalogos/seguiridad.png', title: 'EQUIPOS DE PROTECCIÓN PERSONAL'},
+      { image: '~/assets/images/catalogos/0Equipos.jpg', title: 'EQUIPOS'},
+      { image: '~/assets/images/catalogos/herramientas.png', title: 'HERRAMIENTAS'},
+      { image: '~/assets/images/catalogos/refacciones.png', title: 'REFACCIONES'},
+      { image: '~/assets/images/catalogos/cabezal_desbrozadora.png' , title: 'RIEGO Y PODA'},
     ]}
   />
 
@@ -107,7 +124,7 @@ const metadata = {
     />
   </div>
 
-  <AboutCard tagline="Quienes somos" id="about">
+  <AboutCard tagline="Quienes somos" id="about" backgroundColor='bg-primary dark:bg-secondary'>
     <Fragment slot="title">
       ¡Permítenos ser tu aliado en cada proyecto!<br />
     </Fragment>
@@ -119,7 +136,7 @@ const metadata = {
       especializándonos en la venta de refacciones y el mantenimiento de equipos forestales, agrícolas y de jardinería.
       <br />
       <br />
-      En Rojisa, no solo cuidamos tus equipos, cuidamos tu confianza. <span class="text-primary dark:text-secondary">¡Permítenos ser tu aliado en cada proyecto!</span>
+      En Rojisa, no solo cuidamos tus equipos, cuidamos tu confianza. <span class="text-white dark:text-secondary">¡Permítenos ser tu aliado en cada proyecto!</span>
 
     </Fragment>
 
@@ -143,6 +160,24 @@ const metadata = {
     </Fragment>
   </AboutCard>
 
+  <Stats2
+    stats={[
+      { image: '~/assets/images/husq.png' }
+    ]}
+  />
+  
+  <Stats
+    stats={[
+      { image: '~/assets/images/koshin-logo.png' },
+      { image: '~/assets/images/afosa-logo.png' },
+      { image: '~/assets/images/honda-logo.png' },
+      { image: '~/assets/images/oregon-logo.png' },
+      { image: '~/assets/images/toyama.webp' },
+      { image: '~/assets/images/cifarelli-logo.webp', object_fit: 'cover' },
+      { image: '~/assets/images/bahco-logo.svg' },
+      { image: '~/assets/images/gardena-logo.svg' },
+    ]}
+  />
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
@@ -150,7 +185,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Catalogo',
-        href: 'https://drive.google.com/file/d/1E55taz8T8CLdF57hQGKwu-WdSZre5k_U/view?usp=DRIVESDK',
+        href: 'catalogo_rojisa.pdf',
         target: '_blank',
         icon: 'tabler:download',
       },
